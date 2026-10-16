@@ -19,6 +19,7 @@
   menuBtn.addEventListener("click", function () { setMenu(!navLinks.classList.contains("open")); });
   links.forEach(function (l) { l.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+  document.addEventListener("click", function (e) { if (!nav.contains(e.target)) setMenu(false); });
   window.addEventListener("resize", function () { if (window.innerWidth > 700) setMenu(false); });
 
   // ---- Nav shadow + scroll progress bar
